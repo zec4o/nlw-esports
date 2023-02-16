@@ -43,8 +43,6 @@ export function CreateAdModal() {
         useVoiceChannel: useVoiceChannel,
       });
 
-      console.log('CHEGUEI')
-
       alert("Anúncio criado com sucesso!");
     } catch (err) {
       console.log(err);
