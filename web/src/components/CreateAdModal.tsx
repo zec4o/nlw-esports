@@ -33,7 +33,7 @@ export function CreateAdModal() {
     }
 
     try {
-      await axios.post(`http://localhost:3333/games/${data.game}/ads`, {
+      const response = await axios.post(`http://localhost:3333/games/${data.game}/ads`, {
         name: data.name,
         yearsPlaying: Number(data.yearsPlaying),
         discord: data.discord,
@@ -42,6 +42,8 @@ export function CreateAdModal() {
         hoursEnd: data.hoursEnd,
         useVoiceChannel: useVoiceChannel,
       });
+
+      console.log('CHEGUEI')
 
       alert("Anúncio criado com sucesso!");
     } catch (err) {
@@ -101,7 +103,7 @@ export function CreateAdModal() {
               </label>
               <Input
                 id="yearsPlaying"
-                name="name"
+                name="yearsPlaying"
                 type="number"
                 placeholder="Tudo bem ser ZERO"
               />
